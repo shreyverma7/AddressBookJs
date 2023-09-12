@@ -46,6 +46,21 @@ class AddressBook {
             return false; 
         }
     }
+    deleteContactByName(firstName, lastName) {
+        const foundContactIndex = this.contacts.findIndex(contact => {
+            return contact.firstName === firstName && contact.lastName === lastName;
+        });
+
+        if (foundContactIndex !== -1) {
+            // Use splice to remove the contact from the array
+            this.contacts.splice(foundContactIndex, 1);
+            console.log("Contact Deleted");
+            return true;
+        } else {
+            console.log("Contact not found. Deletion failed.");
+            return false;
+        }
+    }
 }
 
 module.exports = AddressBook;

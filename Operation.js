@@ -39,3 +39,7 @@ else {
     console.log("Contact not found.");
 }
 addressBook.displayContacts();
+addressBook.deleteContactByName("Jane", "Smith");
+console.log("=========Final display=============");
+addressBook.displayContacts();
+
