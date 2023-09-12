@@ -61,6 +61,10 @@ class AddressBook {
             return false;
         }
     }
+    getContactCount() {
+        // Use the reduce function to count the contacts in the array
+        return this.contacts.reduce((count, contact) => count + 1, 0);
+    }
 }
 
 module.exports = AddressBook;

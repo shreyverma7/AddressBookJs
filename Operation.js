@@ -39,7 +39,11 @@ else {
     console.log("Contact not found.");
 }
 addressBook.displayContacts();
+//delete contact
 addressBook.deleteContactByName("Jane", "Smith");
 console.log("=========Final display=============");
 addressBook.displayContacts();
+//Count
+const contactCount = addressBook.getContactCount();
+console.log(`Number of Contacts: ${contactCount}`);
 
