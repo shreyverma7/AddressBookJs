@@ -5,8 +5,20 @@ class AddressBook {
     }
 
     addContact(contact) {
-        this.contacts.push(contact);
-        console.log("Contact Added");
+        // Check for duplicates based on first and last name
+        const isDuplicate = this.contacts.some(existingContact => {
+            return (
+                existingContact.firstName === contact.firstName &&
+                existingContact.lastName === contact.lastName
+            );
+        });
+
+        if (isDuplicate) {
+            console.log("Duplicate entry. Contact not added.");
+        } else {
+            this.contacts.push(contact);
+            console.log("Contact Added");
+        }
     }
 
     displayContacts() {
