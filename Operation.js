@@ -49,5 +49,8 @@ const contactCount = addressBook.getContactCount();
 console.log(`Number of Contacts: ${contactCount}`);
 //Duplicate
 addressBook.addContact(contact4);
+//Search through City and State
+addressBook.findAndDisplayContactsByCity('New York');
+addressBook.findAndDisplayContactsByState('CA');
 
 
