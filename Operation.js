@@ -10,13 +10,14 @@ const contact3 = new Contact("Shrey", "Vermas", "123 adsassvs", "Sasffls", "CAas
 const contact4 = new Contact("Shrey", "Vermas", "123 adsassvs", "Sasffls", "CAasd", "122345", "1232131232", "shrey@example.com");
 const contact5 = new Contact("Nithin", "Smith", "456 Elm St", "Los Angeles", "Andhra", "900001", "1234567890", "jane@example.com");
 const contact6 = new Contact("Prasanna", "Smith", "456 Elm St", "Los Angeles", "Andhra", "900001", "1234567890", "jane@example.com");
+const contact7 = new Contact("Prasannb", "Smith", "456 Elm St", "Los Angeles", "Andhra", "900001", "1234567890", "jane@example.com");
 
 //Adding contact
 addressBook.addContact(contact1);
 addressBook.addContact(contact2);
 addressBook.addContact(contact3);
-addressBook.addContact(contact5);
 addressBook.addContact(contact6);
+addressBook.addContact(contact5);
 
 //Display
 addressBook.displayContacts();
@@ -79,13 +80,14 @@ const personsInCA = addressBook.viewPersonsByState('Califonia');
 personsInCA.forEach(contact => {
     console.log(`${contact.firstName} ${contact.lastName}`);
 });
-console.log("=========Final display=============");
-
 const countInNewYork = addressBook.getCountByCity('New York');
 console.log("Count in New York:", countInNewYork);
 
 const countInNY = addressBook.getCountByState('Andhra');
 console.log("Count in Andhra:", countInNY);
+console.log("=========Final display=============");
+addressBook.addContact(contact7);
+addressBook.displayContacts();
 
 
 

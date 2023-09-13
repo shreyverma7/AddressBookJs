@@ -22,7 +22,19 @@ class AddressBook {
   }
 
   displayContacts() {
-    this.contacts.forEach((contact) => {
+    if (this.contacts.length === 0) {
+      console.log("Address book is empty.");
+      return;
+    }
+
+    // Sort contacts by firstName and lastName
+    const sortedContacts = this.contacts.slice().sort((a, b) => {
+      const nameA = `${a.firstName} ${a.lastName}`;
+      const nameB = `${b.firstName} ${b.lastName}`;
+      return nameA.localeCompare(nameB);
+    });
+
+    sortedContacts.forEach((contact) => {
       console.log(`First Name: ${contact.firstName}`);
       console.log(`Last Name: ${contact.lastName}`);
       console.log(`Address: ${contact.address}`);
@@ -34,6 +46,7 @@ class AddressBook {
       console.log("-------------"); // Separator between contacts
     });
   }
+
   findContactByName(firstName, lastName) {
     const foundContactIndex = this.contacts.findIndex((contact) => {
       return contact.firstName === firstName && contact.lastName === lastName;
