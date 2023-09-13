@@ -142,5 +142,27 @@ class AddressBook {
   viewPersonsByState(state) {
     return this.contacts.filter((contact) => contact.state === state);
   }
+  getCountByCity(city) {
+    const count = this.contacts.reduce((total, contact) => {
+      if (contact.city === city) {
+        return total + 1;
+      }
+      return total;
+    }, 0);
+
+    return count;
+  }
+
+  // Method to get the count of contact persons in a specific state
+  getCountByState(state) {
+    const count = this.contacts.reduce((total, contact) => {
+      if (contact.state === state) {
+        return total + 1;
+      }
+      return total;
+    }, 0);
+
+    return count;
+  }
 }
 module.exports = AddressBook;
