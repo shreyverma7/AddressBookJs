@@ -81,44 +81,66 @@ class AddressBook {
     return this.contacts.reduce((count, contact) => count + 1, 0);
   }
   // Method to search for contacts by city and display them
-    findAndDisplayContactsByCity(city) {
-        const filteredContacts = this.contacts.filter(contact => contact.city === city);
+  findAndDisplayContactsByCity(city) {
+    const filteredContacts = this.contacts.filter(
+      (contact) => contact.city === city
+    );
 
-        if (filteredContacts.length === 0) {
-            console.log(`No contacts found in ${city}`);
-        } else {
-            console.log(`Contacts in ${city}:`);
-            filteredContacts.forEach(contact => {
-                this.displayContact(contact);
-            });
-        }
+    if (filteredContacts.length === 0) {
+      console.log(`No contacts found in ${city}`);
+    } else {
+      console.log(`Contacts in ${city}:`);
+      filteredContacts.forEach((contact) => {
+        this.displayContact(contact);
+      });
     }
+  }
 
-    // Method to search for contacts by state and display them
-    findAndDisplayContactsByState(state) {
-        const filteredContacts = this.contacts.filter(contact => contact.state === state);
+  // Method to search for contacts by state and display them
+  findAndDisplayContactsByState(state) {
+    const filteredContacts = this.contacts.filter(
+      (contact) => contact.state === state
+    );
 
-        if (filteredContacts.length === 0) {
-            console.log(`No contacts found in ${state}`);
-        } else {
-            console.log(`Contacts in ${state}:`);
-            filteredContacts.forEach(contact => {
-                this.displayContact(contact);
-            });
-        }
+    if (filteredContacts.length === 0) {
+      console.log(`No contacts found in ${state}`);
+    } else {
+      console.log(`Contacts in ${state}:`);
+      filteredContacts.forEach((contact) => {
+        this.displayContact(contact);
+      });
     }
-     // Helper method to display contact information
-     displayContact(contact) {
-        console.log(`First Name: ${contact.firstName}`);
-        console.log(`Last Name: ${contact.lastName}`);
-        console.log(`Address: ${contact.address}`);
-        console.log(`City: ${contact.city}`);
-        console.log(`State: ${contact.state}`);
-        console.log(`Zip Code: ${contact.zip}`);
-        console.log(`Phone Number: ${contact.phoneNumber}`);
-        console.log(`Email: ${contact.email}`);
-        console.log("-------------"); // Separator between contacts
-    }
+  }
+  // Helper method to display contact information
+  displayContact(contact) {
+    console.log(`First Name: ${contact.firstName}`);
+    console.log(`Last Name: ${contact.lastName}`);
+    console.log(`Address: ${contact.address}`);
+    console.log(`City: ${contact.city}`);
+    console.log(`State: ${contact.state}`);
+    console.log(`Zip Code: ${contact.zip}`);
+    console.log(`Phone Number: ${contact.phoneNumber}`);
+    console.log(`Email: ${contact.email}`);
+    console.log("-------------"); // Separator between contacts
+  }
+  // Method to search for contacts by city
+  findContactsByCity(city) {
+    return this.contacts.filter((contact) => contact.city === city);
+  }
 
+  // Method to search for contacts by state
+  findContactsByState(state) {
+    return this.contacts.filter((contact) => contact.state === state);
+  }
+
+  // Method to view persons by city and return an array of matching contacts
+  viewPersonsByCity(city) {
+    return this.contacts.filter((contact) => contact.city === city);
+  }
+
+  // Method to view persons by state and return an array of matching contacts
+  viewPersonsByState(state) {
+    return this.contacts.filter((contact) => contact.state === state);
+  }
 }
 module.exports = AddressBook;

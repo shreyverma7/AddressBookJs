@@ -24,7 +24,7 @@ if (foundContact) {
     const updatedInfo = {
         address: "789 Elm St",
         city: "Chicago",
-        state: "ILqwerty",
+        state: "Califonia",
         zip: "600601",
         phoneNumber: "1234567890",
         email: "updated.email@example.com",
@@ -42,7 +42,6 @@ else {
 addressBook.displayContacts();
 //delete contact
 addressBook.deleteContactByName("Jane", "Smith");
-console.log("=========Final display=============");
 addressBook.displayContacts();
 //Count
 const contactCount = addressBook.getContactCount();
@@ -50,7 +49,35 @@ console.log(`Number of Contacts: ${contactCount}`);
 //Duplicate
 addressBook.addContact(contact4);
 //Search through City and State
-addressBook.findAndDisplayContactsByCity('New York');
-addressBook.findAndDisplayContactsByState('CA');
+console.log("==========Search display=============");
+console.log("Contacts in New York:");
+const contactsInNY = addressBook.findContactsByCity('New York');
+contactsInNY.forEach(contact => {
+    console.log(`${contact.firstName} ${contact.lastName}`);
+});
+
+console.log("Contacts in Califonia:");
+const contactsInCA = addressBook.findContactsByState('Califonia');
+contactsInCA.forEach(contact => {
+    console.log(`${contact.firstName} ${contact.lastName}`);
+});
+    //addressBook.findAndDisplayContactsByCity('New York');
+    //addressBook.findAndDisplayContactsByState('CAasd');
+//View by city & state
+console.log("=========Final display=============");
+console.log("Persons in New York:");
+const personsInNY = addressBook.viewPersonsByCity('New York');
+personsInNY.forEach(contact => {
+    console.log(`${contact.firstName} ${contact.lastName}`);
+});
+
+console.log("Persons in Califonia:");
+const personsInCA = addressBook.viewPersonsByState('Califonia');
+personsInCA.forEach(contact => {
+    console.log(`${contact.firstName} ${contact.lastName}`);
+});
+
+
+
 
 
